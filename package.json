@@ -9,7 +9,8 @@
     "start": "npm run build && node build/main",
     "build": "rimraf ./build && npx tsc",
     "lint": "npx eslint ./src",
-    "format": "npx eslint ./src --fix"
+    "format": "npx eslint ./src --fix",
+    "prettier": "npx prettier --write ./src"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@typescript-eslint/parser": "^5.59.2",
     "eslint": "^8.40.0",
     "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
     "rimraf": "^5.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"

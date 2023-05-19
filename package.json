@@ -18,7 +18,7 @@
     "prettier": "npx prettier --write ./src",
     "test": "jest --setupFiles ./jest.config.json",
     "migrate:make": "knex --esm migrate:make --knexfile src/database/knexfile.ts -x ts",
-    "migrate:latest": "knex --esm --knexfile ./src/database/knexfile.ts migrate:latest"
+    "migrate:latest": "npx ts-node -r tsconfig-paths/register ./node_modules/knex/bin/cli.js --knexfile ./src/database/knexfile.ts migrate:latest"
   },
   "keywords": [],
   "author": "",
@@ -46,7 +46,9 @@
     "express": "^4.18.2",
     "knex": "^2.4.2",
     "objection": "^3.0.1",
-    "pg": "^8.10.0",
+    "pg": "^8.11.0",
+    "pg-native": "^3.0.1",
+    "sqlite3": "^5.1.6",
     "tsconfig-paths": "^4.2.0"
   }
 }

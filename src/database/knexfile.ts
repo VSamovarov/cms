@@ -18,5 +18,8 @@ const dbConfig: Knex.Config = {
   migrations: {
     directory: resolve('./migrations'),
   },
+  seeds: {
+    directory: "./seeds",
+  },
 }
 export default dbConfig

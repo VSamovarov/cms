@@ -18,7 +18,10 @@
     "prettier": "npx prettier --write ./src",
     "test": "jest --setupFiles ./jest.config.json",
     "migrate:make": "knex --esm migrate:make --knexfile src/database/knexfile.ts -x ts",
-    "migrate:latest": "npx ts-node -r tsconfig-paths/register ./node_modules/knex/bin/cli.js --knexfile ./src/database/knexfile.ts migrate:latest"
+    "migrate": "npx ts-node -r tsconfig-paths/register ./node_modules/knex/bin/cli.js --knexfile ./src/database/knexfile.ts",
+    "migrate:latest": "npm run migrate migrate:latest",
+    "migrate:rollback": "npm run migrate migrate:rollback",
+    "migrate:status": "npm run migrate migrate:status"
   },
   "keywords": [],
   "author": "",

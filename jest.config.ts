@@ -4,7 +4,7 @@ export default async (): Promise<Config.InitialOptions> => {
   return {
     preset: 'ts-jest',
     displayName: {
-      name: 'placeNameOfYourAppHere',
+      name: 'My CMS tests',
       color: 'greenBright',
     },
     verbose: true,
@@ -16,5 +16,6 @@ export default async (): Promise<Config.InitialOptions> => {
     transform: { '^.+\\.tsx?$': 'ts-jest' },
     globalTeardown: './src/tests/jest-globals-teardown.ts',
     forceExit: true,
+    // cacheDirectory: './.jest-cache',
   }
 }

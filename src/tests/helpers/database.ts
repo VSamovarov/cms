@@ -5,6 +5,7 @@ const connection = knex({
   connection: {
     filename: ':memory:',
   },
+  useNullAsDefault: true,
   migrations: {
     directory: './src/database/migrations',
   },

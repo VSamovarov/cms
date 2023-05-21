@@ -5,13 +5,11 @@ import { Knex as KnexInterface } from 'knex'
 
 describe('UserRepository (Integration)', () => {
   let userRepository: UserRepository
-  let knex: KnexInterface
+  const connect: KnexInterface = getConnection()
 
   beforeAll(async () => {
     // Установка базы данных
     await setupDatabase()
-    knex = getConnection()
-
     // Создание экземпляра UserRepository с реальным подключением к базе данных
     userRepository = new UserRepository()
   })
@@ -19,12 +17,11 @@ describe('UserRepository (Integration)', () => {
   afterAll(async () => {
     // Очистка базы данных
     await teardownDatabase()
-    // knex.destroy()
   })
 
   beforeEach(async () => {
     // Удаление всех пользователей перед каждым тестом
-    await knex(UserModel.tableName).del()
+    await connect(UserModel.tableName).del()
   })
 
   describe('getById', () => {
@@ -41,7 +38,7 @@ describe('UserRepository (Integration)', () => {
       const name = 'John'
       const email = 'john@example.com'
 
-      await knex(UserModel.tableName).insert({ id, name, email })
+      await connect(UserModel.tableName).insert({ id, name, email })
 
       const result = await userRepository.getById(id)
 

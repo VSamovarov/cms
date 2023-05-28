@@ -1,6 +1,6 @@
-import { UserModel } from '../models/UserModel.ts'
-import type { UserRepository as UserRepositoryInterface } from '../interfaces/UserRepository.ts'
-import type { User } from '../interfaces/User.ts'
+import { UserModel } from '../models/UserModel.js'
+import type { UserRepository as UserRepositoryInterface } from '../interfaces/UserRepository.js'
+import type { User } from '../interfaces/User.js'
 
 export class UserRepository implements UserRepositoryInterface {
   async getById(id: number): Promise<User | null> {
